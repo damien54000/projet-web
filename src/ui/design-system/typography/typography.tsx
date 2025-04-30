@@ -25,16 +25,62 @@ interface Props {
 export const Typography = ({variant = "body-md", component: Component= "div", theme = "black", weight = "regular",className, children}: Props) => {
 
     let variantStyles: string = "";
+    let colorStyles: string = "";
 
     switch(variant) {
         case "heading-xl":
-            variantStyles= "text-red-500"
+            variantStyles= "text-9xl"
+            break;
+        case "heading-lg":
+            variantStyles= "text-8xl"
+            break;
+        case "button-lg":
+            variantStyles= "text-7xl"
             break;
         case "heading-sm":
-            variantStyles= "text-green-500"
+            variantStyles= "text-6xl"
+            break;
+        case "heading-xs":
+            variantStyles= "text-5xl"
+            break;
+        case "body-lg":
+            variantStyles= "text-4xl"
+            break;
+        case "body-md"://default
+            variantStyles= "text-3xl"
+            break;
+        case "nav-text":
+            variantStyles= "text-2xl"
+            break;
+        case "button-md":
+            variantStyles= "text-xl"
+            break;
+        case "caption":
+            variantStyles= "text-lg"
+            break;
+        case "caption-sm":
+            variantStyles= "text-base"
             break;
     }
+
+    switch (theme) {
+        case "black"://default
+            colorStyles = "";
+            break;
+        case "white":
+            colorStyles = "text-white";
+            break;
+        case "primary":
+            colorStyles = "bg-gradient-to-r from-primary1 to-primary2 bg-clip-text text-transparent";
+            break;   
+        case "secondary":
+            colorStyles = "";
+            break;   
+        default:
+            break;
+    }
+
     return (
-        <Component className={clsx(variantStyles, className)}>{children}</Component>
+        <Component className={clsx(variantStyles, colorStyles, className)}>{children}</Component>
     )
 }

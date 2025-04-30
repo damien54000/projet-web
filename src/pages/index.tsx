@@ -5,12 +5,22 @@ export default function Home() {
   return (
     <>
       <Seo title="ASMD" description="ASMD : ..." />
-      <Typography variant="heading-sm">
+      <Typography variant="heading-xl" theme="primary">
          Test
       </Typography>
-      <h1 className="text-9xl font-bold underline">
-      Hello world!
-    </h1>
+      <Typography variant="heading-lg" component="div">
+         Test
+      </Typography>
+      <Typography variant="button-lg" component="div">
+         Test
+      </Typography>
+      <Typography variant="heading-sm" component="div">
+         Test
+      </Typography>
+      <Typography variant="heading-xs" component="div">
+         Test
+      </Typography>
+      
     </>
   );
 }
