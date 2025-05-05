@@ -15,14 +15,14 @@ interface Props {
         | "caption-sm" 
         | "heading-lg";
     component?: "div" | "p" | "span";
-    theme?: "black" | "white" | "primary" | "secondary";
+    theme?: "black" | "white" | "primary" | "secondary" | "verttest";
     weight?: "regular" | "medium" | "bold" | "light";
     className?: string;
     children: React.ReactNode;
 
 }
 
-export const Typography = ({variant = "body-md", component: Component= "div", theme = "black", weight = "regular",className, children}: Props) => {
+export const Typography = ({variant = "body-md", component: Component= "div", theme, weight = "regular",className, children}: Props) => {
 
     let variantStyles: string = "";
     let colorStyles: string = "";
@@ -71,11 +71,14 @@ export const Typography = ({variant = "body-md", component: Component= "div", th
             colorStyles = "text-white";
             break;
         case "primary":
-            colorStyles = "bg-gradient-to-r from-primary1 to-primary2 bg-clip-text text-transparent";
+            colorStyles = "text-gradient-primary";
             break;   
         case "secondary":
             colorStyles = "";
             break;   
+        case "verttest":
+            colorStyles = "text-vertest";
+            break;  
         default:
             break;
     }

@@ -8,5 +8,22 @@
     html {
         font-family: Roboto, system-ui, sans-serif;
     }
+
+    body {
+        background: #F9F9F9
+      }
+}
+
+
+@layer utilities {
+    
+    .text-gradient-primary {
+        display: inline-block;
+        background-image: linear-gradient(to right, #01B8CA, #951B81);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
 }
 

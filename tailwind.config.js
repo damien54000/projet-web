@@ -69,9 +69,22 @@ module.exports = {
     },
 
     colors: {
+      black: '#000000',
       white: '#ffffff',
-      primary1: '#01B8CA',
-      primary2: '#951B81'
+      gray: '#f1f1f1',
+      red: '#ff0000'
+    },
+
+    backgroundImage: {
+      'gradient-primary': 'linear-gradient(to right, #01B8CA, #951B81)',
+      'gradient-secondary': 'linear-gradient(to right, #FF3B4F, #FF8141)',
+    },
+    
+    boxShadow: {
+      'base': '0 1px 3px 0 rgba(0, 0, 0, 1)',
+      'primary': '0 6px 20px rgba(0, 188, 212, 0.4)',
+      'secondary':'0 6px 20px rgba(233, 30, 99, 0.6)',
+      'tertiary': '0 6px 20px 0 rgba(0, 0, 0, 1)',
     },
 
 
