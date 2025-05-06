@@ -72,7 +72,11 @@ module.exports = {
       black: '#000000',
       white: '#ffffff',
       gray: '#f1f1f1',
-      red: '#ff0000'
+      red: '#ff0000',
+      cyan:'#00BCD4',
+      'grey-2': '#E0E0E0',
+      'bg-cyan':'#F1F8F9',
+      'nav': 'rgba(255, 255, 255, 0.2)',
     },
 
     backgroundImage: {

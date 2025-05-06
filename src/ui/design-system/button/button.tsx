@@ -17,7 +17,7 @@ export const Button = ({size = "medium", variant = "primary", icon, iconPosition
 
     switch (variant) {
         case "primary"://Default
-            variantStyles="bg-gradient-primary hover:shadow-primary hover:-translate-y-1 transition duration-300 text-white rounded-full";
+            variantStyles="bg-gradient-primary shadow-base hover:shadow-primary hover:-translate-y-1 transition duration-300 text-white rounded-full";
             break;
         case "secondary":
             variantStyles="bg-gradient-secondary shadow-base hover:shadow-secondary hover:-translate-y-1 transition duration-300 text-white rounded-full";
@@ -38,7 +38,7 @@ export const Button = ({size = "medium", variant = "primary", icon, iconPosition
             sizeStyles = "text-xl px-[35.5px] py-[10px]";
             break;
         case "large":
-            sizeStyles = "text-7xl px-[107.5px] py-[10px]";
+            sizeStyles = "text-7xl px-[100.5px] py-[10px]";
             break;
     }
 

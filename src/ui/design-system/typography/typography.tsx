@@ -15,7 +15,7 @@ interface Props {
         | "caption-sm" 
         | "heading-lg";
     component?: "div" | "p" | "span";
-    theme?: "black" | "white" | "primary" | "secondary" | "verttest";
+    theme?: "black" | "white" | "primary" | "secondary" | "cyan";
     weight?: "regular" | "medium" | "bold" | "light";
     className?: string;
     children: React.ReactNode;
@@ -76,8 +76,8 @@ export const Typography = ({variant = "body-md", component: Component= "div", th
         case "secondary":
             colorStyles = "";
             break;   
-        case "verttest":
-            colorStyles = "text-vertest";
+        case "cyan":
+            colorStyles = "text-cyan";
             break;  
         default:
             break;
