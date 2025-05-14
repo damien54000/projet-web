@@ -65,16 +65,21 @@ module.exports = {
         letterSpacing: '0px',
         fontWeight: '300',
       }],
+    
       
     },
 
     colors: {
       black: '#000000',
+      'black-2': '#666666',
       white: '#ffffff',
       gray: '#f1f1f1',
       red: '#ff0000',
       cyan:'#00BCD4',
+      'footer': '#333333',
+      'grey-footer': '#444444',
       'grey-2': '#E0E0E0',
+      'grey-3' : '#BBBBBB',
       'bg-cyan':'#F1F8F9',
       'nav': 'rgba(255, 255, 255, 0.2)',
     },
@@ -89,6 +94,7 @@ module.exports = {
       'primary': '0 6px 20px rgba(0, 188, 212, 0.4)',
       'secondary':'0 6px 20px rgba(233, 30, 99, 0.6)',
       'tertiary': '0 6px 20px 0 rgba(0, 0, 0, 1)',
+      'grey':'0 1px 3px 0 rgba(0, 0, 0, 0.2);',
     },
 
 

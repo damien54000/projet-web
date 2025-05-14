@@ -15,7 +15,7 @@ interface Props {
         | "caption-sm" 
         | "heading-lg";
     component?: "div" | "p" | "span";
-    theme?: "black" | "white" | "primary" | "secondary" | "cyan";
+    theme?: "black" | "white" | "primary" | "secondary" | "cyan" | "grey" | "black-2";
     weight?: "regular" | "medium" | "bold" | "light";
     className?: string;
     children: React.ReactNode;
@@ -65,7 +65,10 @@ export const Typography = ({variant = "body-md", component: Component= "div", th
 
     switch (theme) {
         case "black"://default
-            colorStyles = "";
+            colorStyles = "text-black";
+            break;
+        case "black-2":
+            colorStyles = "text-black-2";
             break;
         case "white":
             colorStyles = "text-white";
@@ -73,8 +76,8 @@ export const Typography = ({variant = "body-md", component: Component= "div", th
         case "primary":
             colorStyles = "text-gradient-primary";
             break;   
-        case "secondary":
-            colorStyles = "";
+        case "grey":
+            colorStyles = "text-grey-3";
             break;   
         case "cyan":
             colorStyles = "text-cyan";
