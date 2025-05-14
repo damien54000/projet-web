@@ -28,8 +28,8 @@ export default function NosServices(){
                     <div className="w-20 h-1 bg-gradient-primary mt-3 mb-10" />
                     {/*Description*/}
                     <div className="max-w-4xl md:text-center mx-6">
-                        <Typography variant="body-lg" theme="black-2">
-                        ASMD vous accompagne au quotidien avec des services de qualité pour les personnes âgées et handicapées. Notre équipe qualifiée est à votre écoute pour répondre à tous vos besoins et vous offrir un soutien adapté à votre situation personnelle.
+                        <Typography variant="body-lg" theme="black-2" component="p">
+                            ASMD vous accompagne au quotidien avec des services de qualité pour les personnes âgées et handicapées. Notre équipe qualifiée est à votre écoute pour répondre à tous vos besoins et vous offrir un soutien adapté à votre situation personnelle.
                         </Typography>
                     </div>
                 </div>

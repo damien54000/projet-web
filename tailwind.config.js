@@ -80,6 +80,7 @@ module.exports = {
       'grey-footer': '#444444',
       'grey-2': '#E0E0E0',
       'grey-3' : '#BBBBBB',
+      'grey-4' : '#F9F9F9',
       'bg-cyan':'#F1F8F9',
       'nav': 'rgba(255, 255, 255, 0.2)',
     },

@@ -14,7 +14,7 @@ interface Props {
         | "caption" 
         | "caption-sm" 
         | "heading-lg";
-    component?: "div" | "p" | "span";
+    component?: "div" | "p";
     theme?: "black" | "white" | "primary" | "secondary" | "cyan" | "grey" | "black-2";
     weight?: "regular" | "medium" | "bold" | "light";
     className?: string;
