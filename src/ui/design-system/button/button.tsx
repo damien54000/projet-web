@@ -2,14 +2,13 @@ import clsx from "clsx";
 
 interface Props {
     size?: "small" | "medium" | "large";
-    variant?: "primary" | "secondary" | "tertiary" |"disabled";
-    icon?: any;
-    iconPosition?: "left" | "right";
-    disabled? : boolean;
+    variant?: "primary" | "secondary" | "tertiary";
+
+    type? : "button" | "submit";
     children?: React.ReactNode;
 }
 
-export const Button = ({size = "medium", variant = "primary", icon, iconPosition = "left", disabled, children}: Props) => {
+export const Button = ({size = "medium", variant = "primary", type = "button", children}: Props) => {
 
     let variantStyles: string;
     let sizeStyles: string;
@@ -24,9 +23,6 @@ export const Button = ({size = "medium", variant = "primary", icon, iconPosition
             break;
         case "tertiary":
             variantStyles="bg-gray shadow-base hover:shadow-tertiary hover:-translate-y-1 transition duration-300 text-black rounded-full";
-            break;
-        case "disabled":
-            variantStyles="";
             break;
     }
 
@@ -44,7 +40,7 @@ export const Button = ({size = "medium", variant = "primary", icon, iconPosition
 
     return (
         <>
-        <button type="button" className={clsx(variantStyles, sizeStyles)} onClick={() => console.log('click')} disabled ={disabled}>
+        <button type={type} className={clsx(variantStyles, sizeStyles)} onClick={() => console.log('click')}>
             {children}
         </button>
         </>
