@@ -6,7 +6,7 @@ import { Menu } from "@/ui/components/menu/menu";
 import { Seo } from "@/ui/components/seo/seo";
 import { Typography } from "@/ui/design-system/typography/typography";
 
-export default function Contact(){
+export default function Contact({ csrfToken }: { csrfToken: string }){
     return(
         <>
             <Seo title="ASMD" description="ASMD : ..." />
@@ -36,7 +36,7 @@ export default function Contact(){
                 <div className="flex justify-center items-center md:items-start gap-x-32 gap-y-20 md:flex-row flex-col mb-10">
                     {/*Formulaire */}
                     <div>
-                        <ContactForm />
+                        <ContactForm csrfToken={csrfToken} />
                     </div>
                     {/*Coordonnées */}
                     <div className="bg-white max-w-80 p-6 rounded-lg shadow-base">
@@ -138,3 +138,17 @@ export default function Contact(){
         </>
     )
 }
+
+import { GetServerSideProps } from "next";
+import { generateCSRFToken } from "@/lib/csrf";
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const secret = process.env.CSRF_SECRET || "default_secret";
+  const csrfToken = generateCSRFToken(secret);
+
+  return {
+    props: {
+      csrfToken,
+    },
+  };
+};

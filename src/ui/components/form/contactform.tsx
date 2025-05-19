@@ -4,42 +4,27 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Button } from "@/ui/design-system/button/button";
 import parsePhoneNumberFromString from "libphonenumber-js";
+import useContactForm from "@/hooks/useContactForm";
 
-{/*Schema de validation */}
-const contactSchema = z.object({
-  name: z.string().min(2, "Nom et prénom requis"),
-  email: z.string().email("Email invalide"),
-  phone: z.string().min(10, "Numéro requis").refine((val) => {
-    const phone = parsePhoneNumberFromString(val, "FR");
-    return phone?.isValid();
-  }, {
-    message: "Numéro invalide",
-  }),
-  subject: z.string().min(2, "Objet requis"),
-  message: z.string().min(10, "Message trop court"),
-  consent: z.literal(true, {errorMap: () => ({ message: "Vous devez accepter la politique de confidentialité" }),}),
-});
-
-{/*Typage*/}
-type ContactFormData = z.infer<typeof contactSchema>;
+type Props = {
+  csrfToken: string;
+};
 
 {/*Initialisation du formulaire */}
-export default function ContactForm() {
+export default function ContactForm({ csrfToken }: Props) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm<ContactFormData>({ resolver: zodResolver(contactSchema) });
-
-  {/*Envoie vers le backend quand tout est validé*/}
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Form data:", data);
-    // Tu pourras ici appeler l'API sécurisée qu'on a faite
-  };
+    errors,
+    onSubmit,
+    isSubmitting,
+    submitResult,
+  } = useContactForm();
 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded-lg shadow-base max-w-2xl">
+      <input type="hidden" value={csrfToken} {...register("csrfToken")} />
       <div>
         <Typography variant="button-lg" theme="cyan">
             Contactez-nous
@@ -112,6 +97,18 @@ export default function ContactForm() {
         </div>
         {errors.consent && <p className="text-red text-3xl">{errors.consent.message}</p>}
       </div>
+
+      {submitResult && (
+        <div
+          className={`my-4 p-3 rounded text-center border ${
+            submitResult.toLowerCase().includes("envoyé")
+              ? "text-green-text bg-green-bg border-green-border"
+              : "text-red-text bg-red-bg border-red-border"
+          }`}
+        >
+          {submitResult}
+        </div>
+      )}
 
       {/*Bouton envoyer ma demande */}
       <div>

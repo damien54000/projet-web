@@ -83,6 +83,12 @@ module.exports = {
       'grey-4' : '#F9F9F9',
       'bg-cyan':'#F1F8F9',
       'nav': 'rgba(255, 255, 255, 0.2)',
+      'green-bg' : '#d1fae5',
+      'green-text' : '#065f46',
+      'green-border' : '#6ee7b7',
+      'red-bg' : '#fee2e2',
+      'red-text' : '#991b1b',
+      'red-border' : '#fca5a5',
     },
 
     backgroundImage: {
