@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/reset-contact-message.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/utils/reset-contact-message.ts"],
   "exclude": ["node_modules"]
 }

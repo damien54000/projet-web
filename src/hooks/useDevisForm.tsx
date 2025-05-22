@@ -4,7 +4,7 @@ import parsePhoneNumberFromString from "libphonenumber-js";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const contactSchema = z.object({
+const devisSchema = z.object({
   name: z.string().min(2, "Nom et prénom requis"),
   email: z.string().email("Email invalide"),
   phone: z
@@ -19,33 +19,46 @@ const contactSchema = z.object({
         message: "Numéro invalide",
       }
     ),
-  subject: z.string().min(2, "Objet requis"),
+  city: z.string().min(2, "Ville requise"),
   message: z.string().min(10, "Message trop court"),
   consent: z.literal(true, {
     errorMap: () => ({
       message: "Vous devez accepter la politique de confidentialité",
     }),
   }),
+  service: z.enum(["personnes-agees", "personnes-handicapees"], {
+    errorMap: () => ({
+      message: "Veuillez sélectionner un service",
+    }),
+  }),
+  frequency: z.enum(
+    ["ponctuel", "hebdomadaire", "bihebdomadaire", "mensuel", "autre"],
+    {
+      errorMap: () => ({
+        message: "Veuillez sélectionner une fréquence",
+      }),
+    }
+  ),
   csrfToken: z.string().min(1, "Token CSRF requis"),
 });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+type DevisFormData = z.infer<typeof devisSchema>;
 
-export default function useContactForm() {
+export default function useDevisForm() {
   const [submitResult, setSubmitResult] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
+  } = useForm<DevisFormData>({
+    resolver: zodResolver(devisSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (data: DevisFormData) => {
     setSubmitResult(null);
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/devis", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +78,7 @@ export default function useContactForm() {
       reset(); // réinitialise le formulaire après succès
     } catch (error) {
       setSubmitResult("Erreur réseau, veuillez réessayer plus tard.");
-      console.error("Erreur fetch API contact :", error);
+      console.error("Erreur fetch API devis :", error);
     }
   };
 

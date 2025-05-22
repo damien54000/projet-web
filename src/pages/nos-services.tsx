@@ -5,8 +5,9 @@ import { Menu } from "@/ui/components/menu/menu";
 import { Seo } from "@/ui/components/seo/seo";
 import { Typography } from "@/ui/design-system/typography/typography";
 
-import Image from 'next/image'
+import Image from "next/image"
 import Link from "next/link";
+
 
 export default function NosServices(){
     return(
@@ -82,15 +83,15 @@ export default function NosServices(){
                             </div>
                             <div className="mt-8">
                                 <Typography className="leading-7" variant="body-md">
-                                    <p>Chez ASMD, nous comprenons l'importance pour les personnes âgées de rester dans leur environnement familier aussi longtemps que possible. Notre service d'aide aux personnes âgées est conçu pour faciliter le maintien à domicile en toute sécurité et confort.</p>
+                                    <p>Chez ASMD, nous comprenons l&apos;importance pour les personnes âgées de rester dans leur environnement familier aussi longtemps que possible. Notre service d&apos;aide aux personnes âgées est conçu pour faciliter le maintien à domicile en toute sécurité et confort.</p>
                                     <br />
                                     <p>Nos intervenants qualifiés proposent un accompagnement personnalisé qui peut inclure :</p>
                                     <br />
-                                    <p><strong>Aide à la toilette et à l'hygiène :</strong> assistance pour la toilette quotidienne, l'habillage et les soins d'hygiène personnelle</p>
+                                    <p><strong>Aide à la toilette et à l&apos;hygiène :</strong> assistance pour la toilette quotidienne, l&apos;habillage et les soins d&apos;hygiène personnelle</p>
                                     <p><strong>Préparation des repas :</strong> élaboration de repas équilibrés selon vos préférences et régimes alimentaires</p>
                                     <p><strong>Courses et approvisionnements :</strong> accompagnement pour les courses ou service de livraison à domicile</p>
                                     <p><strong>Entretien du domicile :</strong> ménage, repassage, rangement et autres tâches ménagères</p>
-                                    <p><strong>Compagnie et activités :</strong> discussions, jeux, lecture, promenades et autres activités selon vos centres d'intérêt</p>
+                                    <p><strong>Compagnie et activités :</strong> discussions, jeux, lecture, promenades et autres activités selon vos centres d&apos;intérêt</p>
                                     <p><strong>Aide administrative :</strong> assistance pour le courrier, les démarches et la gestion des documents</p>
                                     <br />
                                     <p>Notre équipe est formée pour répondre aux besoins spécifiques des personnes âgées, avec bienveillance et respect de leur autonomie. Nous adaptons nos horaires et la fréquence de nos interventions selon vos besoins.</p>
@@ -127,14 +128,14 @@ export default function NosServices(){
                             </div>
                             <div className="mt-8">
                                 <Typography className="leading-7" variant="body-md">
-                                    <p>ASMD propose des services adaptés aux personnes en situation de handicap pour les aider à conserver leur autonomie et améliorer leur qualité de vie quotidienne. Nous élaborons un plan d'accompagnement personnalisé en fonction de chaque type de handicap et des besoins spécifiques.</p>
+                                    <p>ASMD propose des services adaptés aux personnes en situation de handicap pour les aider à conserver leur autonomie et améliorer leur qualité de vie quotidienne. Nous élaborons un plan d&apos;accompagnement personnalisé en fonction de chaque type de handicap et des besoins spécifiques.</p>
                                     <br /> 
-                                    <p>Notre offre d'accompagnement comprend :</p>
+                                    <p>Notre offre d&apos;accompagnement comprend :</p>
                                     <br />
-                                    <p><strong>Aide aux gestes quotidiens :</strong> assistance pour les transferts, la mobilité, l'habillage et la toilette</p>
+                                    <p><strong>Aide aux gestes quotidiens :</strong> assistance pour les transferts, la mobilité, l&apos;habillage et la toilette</p>
                                     <p><strong>Accompagnement spécialisé :</strong> adapté aux différents types de handicap (moteur, sensoriel, mental)</p>
                                     <p><strong>Soutien à la vie sociale :</strong> accompagnement aux activités extérieures, sorties culturelles ou rendez-vous</p>
-                                    <p><strong>Adaptation du domicile :</strong> conseils pour l'aménagement du logement et l'utilisation d'équipements adaptés</p>
+                                    <p><strong>Adaptation du domicile :</strong> conseils pour l&apos;aménagement du logement et l&apos;utilisation d&apos;équipements adaptés</p>
                                     <p><strong>Aide aux repas :</strong> préparation de repas adaptés aux restrictions alimentaires ou difficultés de déglutition</p>
                                     <p><strong>Stimulation cognitive :</strong> activités adaptées pour maintenir ou développer les capacités</p>
                                     <br />
@@ -162,18 +163,18 @@ export default function NosServices(){
                             </div>
                             <div className="mt-8">
                                 <Typography className="leading-7" variant="body-md">
-                                    <p>Au-delà de l'aide à domicile, ASMD propose des services de coordination et d'accompagnement médical pour assurer un suivi de santé optimal. Nous facilitons la communication entre les différents professionnels de santé et veillons à la bonne observance des traitements.</p>
+                                    <p>Au-delà de l&apos;aide à domicile, ASMD propose des services de coordination et d&apos;accompagnement médical pour assurer un suivi de santé optimal. Nous facilitons la communication entre les différents professionnels de santé et veillons à la bonne observance des traitements.</p>
                                     <br />
                                     <p>Notre service de soins et accompagnements inclut :</p>
                                     <br />
                                     <p><strong>Coordination avec les professionnels de santé :</strong> liaison avec médecins, infirmiers, kinésithérapeutes et autres spécialistes</p>
                                     <p><strong>Accompagnement aux rendez-vous médicaux :</strong> transport et présence lors des consultations</p>
                                     <p><strong>Aide à la prise de médicaments :</strong> rappels et surveillance de la prise selon les prescriptions</p>
-                                    <p><strong>Surveillance de l'état de santé :</strong> vigilance sur les symptômes et alerte en cas de changement</p>
-                                    <p><strong>Gestion des documents médicaux :</strong> classement des ordonnances, résultats d'analyses et comptes-rendus</p>
+                                    <p><strong>Surveillance de l&apos;état de santé :</strong> vigilance sur les symptômes et alerte en cas de changement</p>
+                                    <p><strong>Gestion des documents médicaux :</strong> classement des ordonnances, résultats d&apos;analyses et comptes-rendus</p>
                                     <p><strong>Soutien psychologique :</strong> écoute attentive et réconfort au quotidien</p>
                                     <br />
-                                    <p>Notre équipe est formée pour répondre aux situations d'urgence et pour communiquer efficacement avec les services médicaux. Nous nous assurons que toutes les informations importantes concernant votre santé sont correctement transmises et suivies.</p>
+                                    <p>Notre équipe est formée pour répondre aux situations d&apos;urgence et pour communiquer efficacement avec les services médicaux. Nous nous assurons que toutes les informations importantes concernant votre santé sont correctement transmises et suivies.</p>
                                 </Typography>
                             </div>
                         </div>

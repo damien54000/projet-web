@@ -8,7 +8,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -20,6 +19,19 @@ model ContactMessage {
   email     String
   phone     String
   subject   String
+  message   String
+  consent   Boolean
+  createdAt DateTime @default(now())
+}
+
+model DevisMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String
+  city      String
+  service   String
+  frequency String
   message   String
   consent   Boolean
   createdAt DateTime @default(now())

@@ -2,9 +2,9 @@ import { Button } from "@/ui/design-system/button/button";
 import { Typography } from "@/ui/design-system/typography/typography";
 import Link from "next/link";
 
-interface Props {};
 
-export const Footer = ({}: Props) => {
+
+export const Footer = () => {
     return (
         <>
         {/*Footer : Demande de devis */}
@@ -16,7 +16,7 @@ export const Footer = ({}: Props) => {
             </div>
             <div className="max-w-3xl text-center py-7">
                 <Typography variant="body-lg">
-                    Nos conseillers sont à votre disposition pour évaluer vos besoins et vous proposer une solution adaptée. Bénéficiez d'un service sur mesure qui répond parfaitement à vos attentes.
+                    Nos conseillers sont à votre disposition pour évaluer vos besoins et vous proposer une solution adaptée. Bénéficiez d&apos;un service sur mesure qui répond parfaitement à vos attentes.
                 </Typography>
             </div>
             <div className="pt-2">
@@ -72,7 +72,7 @@ export const Footer = ({}: Props) => {
                             </div>
                             <div className="mt-1">
                                 <Typography variant="body-md">
-                                    Une prise en charge adaptée à chaque situation et à l'évolution de vos besoins.
+                                    Une prise en charge adaptée à chaque situation et à l&apos;évolution de vos besoins.
                                 </Typography>
                             </div>
                         </div>
@@ -133,13 +133,13 @@ export const Footer = ({}: Props) => {
             <div className="max-w-sm">
                 <div>
                     <Typography theme="white" variant="heading-xs">
-                        À propos d'ASMD
+                        À propos d&apos;ASMD
                     </Typography>
                 </div>
                 <div className="w-10 h-1 bg-gradient-primary mt-3 mb-5"></div>
                 <div>
                     <Typography theme="white" variant="body-md">
-                        ASMD est une entreprise spécialisée dans l'aide à domicile pour les personnes âgées et en situation de handicap. Notre mission est d'améliorer la qualité de vie de nos bénéficiaires tout en respectant leur dignité et leur autonomie.
+                        ASMD est une entreprise spécialisée dans l&apos;aide à domicile pour les personnes âgées et en situation de handicap. Notre mission est d&apos;améliorer la qualité de vie de nos bénéficiaires tout en respectant leur dignité et leur autonomie.
                     </Typography>
                 </div>
             </div>

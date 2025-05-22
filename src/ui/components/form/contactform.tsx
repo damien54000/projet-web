@@ -1,10 +1,7 @@
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Button } from "@/ui/design-system/button/button";
-import parsePhoneNumberFromString from "libphonenumber-js";
 import useContactForm from "@/hooks/useContactForm";
+
 
 type Props = {
   csrfToken: string;
@@ -17,7 +14,6 @@ export default function ContactForm({ csrfToken }: Props) {
     handleSubmit,
     errors,
     onSubmit,
-    isSubmitting,
     submitResult,
   } = useContactForm();
 
@@ -92,7 +88,7 @@ export default function ContactForm({ csrfToken }: Props) {
         <div className="flex items-start">
           <input type="checkbox" {...register("consent")} className="mt-1 mr-2" />
           <label className="text-sm">
-            J'accepte que mes données soient traitées pour la gestion de ma demande conformément à la politique de confidentialité *
+            J&apos;accepte que mes données soient traitées pour la gestion de ma demande conformément à la politique de confidentialité *
           </label>
         </div>
         {errors.consent && <p className="text-red text-3xl">{errors.consent.message}</p>}

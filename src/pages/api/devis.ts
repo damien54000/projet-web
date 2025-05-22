@@ -7,7 +7,7 @@ import sanitizeHtml from "sanitize-html";
 import { verifyCSRFToken } from "@/lib/csrf";
 
 // Schéma Zod de verification
-const contactSchema = z.object({
+const devisSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   phone: z.string().refine(
@@ -17,9 +17,17 @@ const contactSchema = z.object({
     },
     { message: "Numéro invalide" }
   ),
-  subject: z.string().min(2),
+  city: z.string().min(2),
   message: z.string().min(10),
   consent: z.literal(true),
+  service: z.enum(["personnes-agees", "personnes-handicapees"]),
+  frequency: z.enum([
+    "ponctuel",
+    "hebdomadaire",
+    "bihebdomadaire",
+    "mensuel",
+    "autre",
+  ]),
   csrfToken: z.string().min(1),
 });
 
@@ -32,7 +40,7 @@ export default async function handler(
   }
 
   //Validation des données
-  const result = contactSchema.safeParse(req.body);
+  const result = devisSchema.safeParse(req.body);
   console.log("Résultat validation Zod :", result);
 
   if (!result.success) {
@@ -47,7 +55,7 @@ export default async function handler(
   const isTokenValid = verifyCSRFToken(secret, result.data.csrfToken);
 
   if (!isTokenValid) {
-    return res.status(403).json({ message: "Token CSRF invalide" });
+    return res.status(403).json({ message: "Accès interdit" });
   }
 
   //Nettoyage XSS
@@ -57,22 +65,23 @@ export default async function handler(
     name: sanitizeHtml(rawData.name),
     email: sanitizeHtml(rawData.email),
     phone: sanitizeHtml(rawData.phone),
-    subject: sanitizeHtml(rawData.subject),
+    city: sanitizeHtml(rawData.city),
     message: sanitizeHtml(rawData.message),
+    service: sanitizeHtml(rawData.service),
+    frequency: sanitizeHtml(rawData.frequency),
     consent: rawData.consent,
   };
 
   console.log("Données envoyées à Prisma :", data);
 
   try {
-    await prisma.contactMessage.create({ data });
+    await prisma.devisMessage.create({ data });
 
     console.log("Message enregistré avec succès");
 
     return res.status(201).json({ message: "Message envoyé avec succès" });
   } catch (error: unknown) {
     console.error("Erreur Prisma :", error);
-
     if (error instanceof Error) {
       return res
         .status(500)

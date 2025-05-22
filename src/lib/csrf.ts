@@ -1,4 +1,4 @@
-import Csrf from 'csrf';
+import Csrf from "csrf";
 
 const csrfInstance = new Csrf();
 
