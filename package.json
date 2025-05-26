@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "reset-db-c": "ts-node src/utils/reset-contact-message.js",
+    "reset-db-contact": "ts-node src/utils/reset-contact-message.js",
+    "reset-db-devis": "ts-node src/utils/reset-devis-message.js",
     "test": "jest"
   },
   "dependencies": {
