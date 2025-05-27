@@ -1,8 +1,13 @@
+//Page A propos
+
+//Import composant
 import { Container } from "@/ui/components/container/container";
 import { Footer } from "@/ui/components/footer/footer";
 import { Header } from "@/ui/components/header/header";
 import { Menu } from "@/ui/components/menu/menu";
 import { Seo } from "@/ui/components/seo/seo";
+
+//Import design system
 import { Typography } from "@/ui/design-system/typography/typography";
 
 

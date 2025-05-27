@@ -1,3 +1,7 @@
+//Composant : Seo
+//Gère le référencement et les métadonnées de la page
+
+// Import externe
 import Head from "next/head";
 
 interface Props {

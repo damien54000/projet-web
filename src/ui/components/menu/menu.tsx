@@ -1,4 +1,10 @@
+//Composant : Menu
+//Affiche un menu de navigation horizontal visible uniquement sur ordinateur
+
+//Import Design system
 import { Typography } from "@/ui/design-system/typography/typography";
+
+//Import externe
 import Link from "next/link";
 
 export const Menu = () => {

@@ -1,7 +1,12 @@
+//Composant : Footer
+//Affiche le pied de la page
+
+//Import Design system
 import { Button } from "@/ui/design-system/button/button";
 import { Typography } from "@/ui/design-system/typography/typography";
-import Link from "next/link";
 
+//Import externe
+import Link from "next/link";
 
 
 export const Footer = () => {

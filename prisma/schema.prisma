@@ -13,6 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//Modèle ContactMessage utilisé pour stocker les messages du formulaire de contact
 model ContactMessage {
   id        Int      @id @default(autoincrement())
   name      String
@@ -24,6 +25,7 @@ model ContactMessage {
   createdAt DateTime @default(now())
 }
 
+//Modèle DevisMessage utilisé pour stocker les messages du formulaire de devis
 model DevisMessage {
   id        Int      @id @default(autoincrement())
   name      String

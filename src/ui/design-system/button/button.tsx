@@ -1,3 +1,7 @@
+//Design system : Button
+//Bouton réutilisable avec styles personnalisables (taille, couleur, type)
+//clsx permet de combiner les classes dynamiquement
+
 import clsx from "clsx";
 
 interface Props {

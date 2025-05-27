@@ -1,11 +1,20 @@
+//Page Devis
+
+//Import Librairies
 import { generateCSRFToken } from "@/lib/csrf";
+
+//Import composant
 import { Container } from "@/ui/components/container/container";
 import { Footer } from "@/ui/components/footer/footer";
 import DevisForm from "@/ui/components/form/devisform";
 import { Header } from "@/ui/components/header/header";
 import { Menu } from "@/ui/components/menu/menu";
 import { Seo } from "@/ui/components/seo/seo";
+
+//Import design system
 import { Typography } from "@/ui/design-system/typography/typography";
+
+//Import externe
 import { GetServerSideProps } from "next";
 
 export default function Devis({ csrfToken }: { csrfToken: string }) {
@@ -98,13 +107,16 @@ export default function Devis({ csrfToken }: { csrfToken: string }) {
   );
 }
 
+//Fonction exécutée coté serveur à chaque requête
+//Génère un token CSRF et le transmet aux props de la page
+
 export const getServerSideProps: GetServerSideProps = async () => {
-  const secret = process.env.CSRF_SECRET || "default_secret";
-  const csrfToken = generateCSRFToken(secret);
+  const secret = process.env.CSRF_SECRET || "default_secret"; //Récupère le secret CSRF depuis les variables d'environnement
+  const csrfToken = generateCSRFToken(secret); //Génère un token CSRF unique
 
   return {
     props: {
-      csrfToken,
+      csrfToken, // Transmet le token à la page comme prop
     },
   };
 };

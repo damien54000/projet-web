@@ -1,3 +1,6 @@
+//Design system : Logo
+//Affiche le logo de l'entreprise sous forme SVG avec deux tailles possibles et personnalisables
+
 interface Props {
   size?: "small" | "normal";
 }

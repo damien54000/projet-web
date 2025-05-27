@@ -1,11 +1,17 @@
+//Page Index / Accueil
+
+//Import composant
 import { Container } from "@/ui/components/container/container";
 import { Footer } from "@/ui/components/footer/footer";
 import { Header } from "@/ui/components/header/header";
 import { Menu } from "@/ui/components/menu/menu";
 import { Seo } from "@/ui/components/seo/seo";
+
+//Import Design system
 import { Button } from "@/ui/design-system/button/button";
 import { Typography } from "@/ui/design-system/typography/typography";
 
+//Import externe
 import Image from "next/image";
 import Link from "next/link";
 

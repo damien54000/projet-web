@@ -1,3 +1,6 @@
+//Design system : Typography
+//Gère la typographie du site (style, couleur)
+
 import clsx from "clsx";
 
 interface Props {

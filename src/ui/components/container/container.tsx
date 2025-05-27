@@ -1,3 +1,8 @@
+//Composant : Container
+//Sert de conteneur central pour les pages ou sections
+//Applique une largeur maxiame, un centrage et du padding responsive
+
+//Import externe
 import clsx from "clsx";
 
 interface Props {

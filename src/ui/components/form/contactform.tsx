@@ -1,25 +1,32 @@
+//Composant : ContactForm
+//Affiche un formulaire de contact sécurisé avec validation, messages d'erreur et soumission vers l'API
+
+//Import Design system
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Button } from "@/ui/design-system/button/button";
+
+//Import Hooks
 import useContactForm from "@/hooks/useContactForm";
 
 
 type Props = {
-  csrfToken: string;
+  csrfToken: string; //Token CSRF géné côté serveur
 };
 
-{/*Initialisation du formulaire */}
+{/*Initialisation du formulaire via le hook */}
 export default function ContactForm({ csrfToken }: Props) {
   const {
-    register,
-    handleSubmit,
-    errors,
-    onSubmit,
-    submitResult,
+    register, //Permet de lier les champs au formulaire
+    handleSubmit, //Gère la soumission du formulaire
+    errors, //Contient les erreurs de validation
+    onSubmit, //Fonction appeée à la soumission
+    submitResult, //Message de succès ou d'erreur
   } = useContactForm();
 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 rounded-lg shadow-base max-w-2xl">
+      {/* Champ caché pour le token CSRF */}
       <input type="hidden" value={csrfToken} {...register("csrfToken")} />
       <div>
         <Typography variant="button-lg" theme="cyan">

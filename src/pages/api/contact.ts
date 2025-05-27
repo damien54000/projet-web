@@ -1,9 +1,15 @@
+//API : /api/contact
+// Reçoit les messages du formulaire de contact
+// Valide les données (Zod), vérifie le token CSRF, nettoie les champs (XSS), enregistre dans la base de donnée (Prisma)
+
+//Librairies externes
 import { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 import parsePhoneNumberFromString from "libphonenumber-js";
-import prisma from "@/lib/prisma";
-
 import sanitizeHtml from "sanitize-html";
+
+//Librairies internes
+import prisma from "@/lib/prisma";
 import { verifyCSRFToken } from "@/lib/csrf";
 
 // Schéma Zod de verification
@@ -27,15 +33,17 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  //Vérifie que la méthode HTTP est POST
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Méthode non autorisée" });
   }
 
-  //Validation des données
+  //Validation des données avec Zod
   const result = contactSchema.safeParse(req.body);
   console.log("Résultat validation Zod :", result);
 
   if (!result.success) {
+    //Retourne les erreurs de validation
     return res.status(400).json({
       message: "Validation échouée",
       errors: result.error.format(),
@@ -47,10 +55,11 @@ export default async function handler(
   const isTokenValid = verifyCSRFToken(secret, result.data.csrfToken);
 
   if (!isTokenValid) {
+    //Token invalide : accès interdit
     return res.status(403).json({ message: "Token CSRF invalide" });
   }
 
-  //Nettoyage XSS
+  //Nettoyage des champs pour éviter les injections XSS
   const { ...rawData } = result.data;
 
   const data = {
@@ -65,6 +74,7 @@ export default async function handler(
   console.log("Données envoyées à Prisma :", data);
 
   try {
+    //Enregistrement du message dans la base via Prisma
     await prisma.contactMessage.create({ data });
 
     console.log("Message enregistré avec succès");
@@ -73,6 +83,7 @@ export default async function handler(
   } catch (error: unknown) {
     console.error("Erreur Prisma :", error);
 
+    // Gestion des erreurs Prisma
     if (error instanceof Error) {
       return res
         .status(500)

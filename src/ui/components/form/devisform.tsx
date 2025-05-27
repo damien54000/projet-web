@@ -1,22 +1,26 @@
+//Composant : DevisForm
+//Affiche un formulaire de devis écurisé avec validation, message d'erreur et soumission vers l'API 
+
+//Import Design system
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Button } from "@/ui/design-system/button/button";
+
+//Import Hooks
 import useDevisForm from "@/hooks/useDevisForm";
 
 
 type Props = {
-  csrfToken: string;
+  csrfToken: string; //Token CSRF géné côté serveur
 };
 
-{
-  /*Initialisation du formulaire */
-}
+{/*Initialisation du formulaire via le hook */}
 export default function DevisForm({ csrfToken }: Props) {
   const {
-    register,
-    handleSubmit,
-    errors,
-    onSubmit,
-    submitResult,
+    register, //Permet de lier les champs au formulaire
+    handleSubmit, //Gère la soumission du formulaire
+    errors, //Contient les erreurs de validation
+    onSubmit, //Fonction appeée à la soumission
+    submitResult, //Message de succès ou d'erreur
   } = useDevisForm();
 
   return (
@@ -24,6 +28,7 @@ export default function DevisForm({ csrfToken }: Props) {
       onSubmit={handleSubmit(onSubmit)}
       className="bg-white p-10 rounded-lg shadow-base"
     >
+      {/* Champ caché pour le token CSRF */}
       <input type="hidden" value={csrfToken} {...register("csrfToken")} />
       {/*Formulaire*/}
       <div className="grid gap-x-10 gap-y-8">
