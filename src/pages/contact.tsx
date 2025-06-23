@@ -76,7 +76,7 @@ export default function Contact({ csrfToken }: { csrfToken: string }) {
                   {/*Description*/}
                   <div>
                     <Typography variant="body-md">
-                      23 bis rue Fabvier, 54700 Pont-à-Mousson
+                      23 bis rue X, 54700 Pont-à-Mousson
                     </Typography>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function Contact({ csrfToken }: { csrfToken: string }) {
                   </div>
                   {/*Description*/}
                   <div>
-                    <Typography variant="body-md">06 44 25 60 22</Typography>
+                    <Typography variant="body-md">03 00 00 00 00</Typography>
                   </div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function Contact({ csrfToken }: { csrfToken: string }) {
                   {/*Description*/}
                   <div>
                     <Typography variant="body-md">
-                      aurelieme@icloud.com
+                      contact@asmd54.fr
                     </Typography>
                   </div>
                 </div>

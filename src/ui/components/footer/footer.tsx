@@ -200,8 +200,8 @@ export const Footer = () => {
                 </div>
                 <div className="w-10 h-1 bg-gradient-primary mt-3 mb-5"></div>
                 <div>
-                    <Typography variant="body-md" theme="white">aurelieme@icloud.com</Typography>
-                    <Typography variant="body-md" theme="white">06 44 25 60 22</Typography>
+                    <Typography variant="body-md" theme="white">contact@asmd54.fr</Typography>
+                    <Typography variant="body-md" theme="white">03 00 00 00 00</Typography>
                     <Typography variant="body-md" theme="white">23 bis rue Fabvier, 54700 Pont-à-Mousson</Typography>
                 </div> 
             </div>

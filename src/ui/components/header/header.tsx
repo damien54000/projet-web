@@ -88,7 +88,7 @@ export const Header = () => {
 
           {/* Infos téléphone et boutons */}
           <div>
-            <Typography variant="heading-sm">06 44 25 60 22</Typography>
+            <Typography variant="heading-sm">03 00 00 00 00</Typography>
             <Typography variant="caption-sm">7j/7 - 8h à 20h</Typography>
           </div>
           <Link href="/espace-client">
@@ -108,7 +108,7 @@ export const Header = () => {
         </Link>
         <div className="flex items-center gap-6">
           <div className="flex flex-col items-end">
-            <Typography variant="heading-sm">06 44 25 60 22</Typography>
+            <Typography variant="heading-sm">03 00 00 00 00</Typography>
             <Typography variant="caption-sm">7j/7 - 8h à 20h</Typography>
           </div>
           <Link href="/espace-client">
